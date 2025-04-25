@@ -15,8 +15,15 @@ Cho file sv_tnut.sql (1.6MB)
 
 DEADLINE: 23H59:59 NGÀY 25/4/2025
 ## Bài làm:
-##### Import được dữ liệu trong sv_tnut.sql vào sql server
-###### 1. tạo server
+##### 1. Import dữ liệu trong sv_tnut.sql vào sql server
+###### tạo server sv_tnut
 ![1](https://github.com/user-attachments/assets/1499382f-448f-4346-b20f-fd707c666499)
-##### 2. Execute file sv_tnut.sql
+###### Execute file sv_tnut.sql
 ![2](https://github.com/user-attachments/assets/d226d6aa-ce30-40ad-9789-7fb4e9d6ac06)
+
+##### 2. dữ liệu đầu vào là tên của sv; sđt; ngày, tháng, năm sinh của sinh viên (của sv đang làm bài tập này)
+```sql
+select hodem, ten, sdt, ns from dbo.SV
+where masv='K225480106047'
+```
+![2 sv lam bai](https://github.com/user-attachments/assets/096533ea-6df3-43c7-be2f-ac67f791bca9)
