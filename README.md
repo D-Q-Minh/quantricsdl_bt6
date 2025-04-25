@@ -66,3 +66,21 @@ where hodem = (select hodem from dbo.SV where masv = 'K225480106047')
 ![7 sv trung hodem](https://github.com/user-attachments/assets/97c7273f-3670-4eb3-b155-b295f69d7e8f)
 
 ##### 8. tìm xem có những sv nào có sđt sai khác chỉ 1 số so với sđt của sv làm bài
+```sql
+select masv, hodem, ten, ns, sdt, lop
+from dbo.sv
+where
+( 	case when SUBSTRING (sdt, 1, 1) = '3' then 0 else 1 end +
+	case when SUBSTRING (sdt, 2, 1) = '3' then 0 else 1 end +
+	case when SUBSTRING (sdt, 3, 1) = '8' then 0 else 1 end +
+	case when SUBSTRING (sdt, 4, 1) = '0' then 0 else 1 end +
+	case when SUBSTRING (sdt, 5, 1) = '7' then 0 else 1 end +
+	case when SUBSTRING (sdt, 6, 1) = '8' then 0 else 1 end +
+	case when SUBSTRING (sdt, 7, 1) = '2' then 0 else 1 end +
+	case when SUBSTRING (sdt, 8, 1) = '9' then 0 else 1 end +
+	case when SUBSTRING (sdt, 9, 1) = '4' then 0 else 1 end
+) = 1
+```
+![8 sv khac sdt 1 so](https://github.com/user-attachments/assets/7709a570-021b-40fb-a1f2-304ce9e1f42d)
+phần điều kiện where so sánh các chữ số sdt, nếu tổng chữ số sai = 1
+##### 9. 
