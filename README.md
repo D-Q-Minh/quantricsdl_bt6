@@ -97,5 +97,18 @@ order by hodem, ten collate vietnamese_ci_ai
 
 ##### 10. LIỆT KÊ CÁC SV NỮ NGÀNH KMT CÓ TRONG BẢNG SV
 ```sql
-
+select * from dbo.SV
+where ( lop like  '%KMT%' or lop like '%KTP%')
+	and (hodem like '%Thị%' or hodem like '%Thị' or hodem like '%Kim'
+	or hodem like '%Ngọc' or hodem like '%Kiều' or hodem like '%Chà' or hodem like '%Ánh%' or hodem like '%Kim'
+	or hodem like '%Hồng' or hodem like '%Thùy')
+	and ten in (N'Ánh', N'Hà', N'Hằng', N'Hạnh', N'Huyền', N'Linh', N'Mai', N'My', N'Ngân', N'Ngọc', N'Nguyệt',
+	N'Nhung', N'Phương', N'Quỳnh', N'Thùy', N'Thúy', N'Trang', N'Tuyết', N'Yến', N'Ý')
+order by hodem, ten collate vietnamese_ci_ai
 ```
+![10 sv kmt nu](https://github.com/user-attachments/assets/52a7169d-76d5-4ce5-be60-96a752140e10)
+
+- trường lop chọn các bản ghi là "KMT" hoặc "KTP"
+- trường ten chọn các bản ghi có tên nữ
+- trường hodem chọn các bản ghi có phần tên đệm kết hợp với trường tên tạo thành tên nữ
+nhưng cách này không tối ưu do phải liệt kê rất nhiều và phải chắc phần đệm kết hợp tên là nữ
