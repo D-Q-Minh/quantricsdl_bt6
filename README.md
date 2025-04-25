@@ -30,5 +30,31 @@ where masv='K225480106047'
 
 ##### 3. tìm xem có những sv nào trùng hoàn toàn ngày/tháng/năm với sv làm bài
 ```sql
-
+select * from dbo.SV
+where ns = (select ns from dbo.SV where masv = 'K225480106047')
 ```
+![3 sv trung ns](https://github.com/user-attachments/assets/9656d7ba-f9e7-4cb3-8bfb-56fbfaf81247)
+
+##### 4. tìm xem có những sv nào trùng ngày và tháng sinh với sv làm bài
+```sql
+select * from dbo.SV
+where day(ns) = day((select ns from dbo.SV where masv = 'K225480106047'))
+	and MONTH(ns)=MONTH((select ns from dbo.SV where masv = 'K225480106047'))
+```
+![4 sv trung ns ngay thang](https://github.com/user-attachments/assets/2d9668a3-3b65-402a-9564-bc08bc3098a7)
+
+##### 5. tìm xem có những sv nào trùng tháng và năm sinh với sv làm bài
+```sql
+select * from dbo.SV
+where MONTH(ns)=MONTH((select ns from dbo.SV where masv = 'K225480106047'))
+	and year(ns)=year((select ns from dbo.SV where masv = 'K225480106047'))
+```
+![5 sv trung ns thang nam](https://github.com/user-attachments/assets/da5f3408-7327-4781-a7f0-16491b7c1611)
+
+##### 6. tìm xem có những sv nào trùng tên với sv làm bài
+```sql
+select * from dbo.SV
+where ten = (select ten from dbo.SV where masv = 'K225480106047')
+```
+![6 sv trung ten](https://github.com/user-attachments/assets/af944d2b-9832-4bd1-bb96-f886434a1f5c)
+
