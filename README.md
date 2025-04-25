@@ -58,3 +58,11 @@ where ten = (select ten from dbo.SV where masv = 'K225480106047')
 ```
 ![6 sv trung ten](https://github.com/user-attachments/assets/af944d2b-9832-4bd1-bb96-f886434a1f5c)
 
+##### 7. tìm xem có những sv nào trùng họ và tên đệm với sv làm bài
+```sql
+select * from dbo.SV
+where hodem = (select hodem from dbo.SV where masv = 'K225480106047')
+```
+![7 sv trung hodem](https://github.com/user-attachments/assets/97c7273f-3670-4eb3-b155-b295f69d7e8f)
+
+##### 8. tìm xem có những sv nào có sđt sai khác chỉ 1 số so với sđt của sv làm bài
