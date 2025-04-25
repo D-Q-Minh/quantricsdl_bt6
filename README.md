@@ -91,7 +91,9 @@ where lop like  '%KMT%'
 order by hodem, ten collate vietnamese_ci_ai
 ```
 ![9 sv kmt](https://github.com/user-attachments/assets/fcea2266-86d1-48d1-9e9f-8d82f59b05ea)
-phần điều kiện where lớp chọn các bản ghi lớp có chữ KMT, phần order by sắp xếp họ đệm và tên theo kiểu tiếng Việt bằng lệnh collate
+
+- phần where lớp chọn các bản ghi lớp có chữ "KMT"
+- phần order by sắp xếp họ đệm và tên theo kiểu tiếng Việt bằng lệnh collate. Vietnamese_ci_ai gồm ci (không phân biệt viết hoa viết thường) và ai (xác định cả dấu)
 
 ##### 10. LIỆT KÊ CÁC SV NỮ NGÀNH KMT CÓ TRONG BẢNG SV
 ```sql
