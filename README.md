@@ -27,3 +27,8 @@ select hodem, ten, sdt, ns from dbo.SV
 where masv='K225480106047'
 ```
 ![2 sv lam bai](https://github.com/user-attachments/assets/096533ea-6df3-43c7-be2f-ac67f791bca9)
+
+##### 3. tìm xem có những sv nào trùng hoàn toàn ngày/tháng/năm với sv làm bài
+```sql
+
+```
