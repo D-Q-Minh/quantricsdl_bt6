@@ -82,5 +82,18 @@ where
 ) = 1
 ```
 ![8 sv khac sdt 1 so](https://github.com/user-attachments/assets/7709a570-021b-40fb-a1f2-304ce9e1f42d)
-phần điều kiện where so sánh các chữ số sdt, nếu tổng chữ số sai = 1
-##### 9. 
+phần điều kiện where so sánh các chữ số sdt, nếu tổng chữ số sai = 1 thì lấy bản ghi
+
+##### 9. BẢNG SV CÓ HƠN 9000 ROWS, HÃY LIỆT KÊ TẤT CẢ CÁC SV NGÀNH KMT, SẮP XẾP THEO TÊN VÀ HỌ ĐỆM, KIỂU TIẾNG  VIỆT, GIẢI THÍCH.
+```sql
+select * from dbo.SV
+where lop like  '%KMT%'
+order by hodem, ten collate vietnamese_ci_ai
+```
+![9 sv kmt](https://github.com/user-attachments/assets/fcea2266-86d1-48d1-9e9f-8d82f59b05ea)
+phần điều kiện where lớp chọn các bản ghi lớp có chữ KMT, phần order by sắp xếp họ đệm và tên theo kiểu tiếng Việt bằng lệnh collate
+
+##### 10. LIỆT KÊ CÁC SV NỮ NGÀNH KMT CÓ TRONG BẢNG SV
+```sql
+
+```
